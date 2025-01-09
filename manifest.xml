@@ -31,5 +31,8 @@
   <project path="shell/BasicComponents/Wallpapers" name="lingmo-wallpapers" />
   <project path="boot/splash/BootScreen" name="lingmo-plymouth-theme" />
   <project path="config/system" name="lingmo-base-common" />
+  <project path="tools" name="manifest">
+    <copyfile dest="Makefile" src="utils/Makefile" />
+  </project>
 </manifest>
 
