@@ -10,7 +10,7 @@
   <project path="shell/CoreComponents/KWinRoundedWindow" name="lingmo-kwin-plugins-roundedwindow" />
   <project path="lib/SystemLibrary" name="lib_lingmo" />
   <project path="lib/SystemUI_Library" name="LingmoUI" />
-  <project path="lib/SystemLibrary_Qt" name="lingmo-qt-plugins">
+  <project path="lib/SystemLibrary_Qt" name="lingmo-qt-plugins" />
   <project path="shell/BasicComponents/Calculator" name="lingmo-calculator" />
   <project path="shell/BasicComponents/Cursor" name="lingmo-cursor-themes" />
   <project path="shell/BasicComponents/DockPanel" name="lingmo-dock" />
