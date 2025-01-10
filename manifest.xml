@@ -36,5 +36,8 @@
   </project>
   <project path="kernel" name="linux" />
   <project path="kernel/debian" name="linux-package" />
+  <project path="init" name="lingmo-base-common" />
+  <project path="system/installer" name="lingmo-live" />
+  <project path="guide" name="lingmo-first-setup">
 </manifest>
 
