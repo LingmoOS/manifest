@@ -35,6 +35,6 @@
     <copyfile dest="Makefile" src="utils/Makefile" />
   </project>
   <project path="kernel" name="linux" />
-  <project path="kernel" name="linux-package" />
+  <project path="kernel/debian" name="linux-package" />
 </manifest>
 
