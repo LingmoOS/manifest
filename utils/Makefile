@@ -4,17 +4,19 @@
 BUILD_DIR := build
 
 # Find all directories containing a 'debian' folder
-DEBIAN_DIRS := $(shell find . -type d -name 'debian' -exec dirname {} \;)
+SHELL_DIRS := $(shell find shell -type d -name 'debian' -exec dirname {} \;)
+LIB_DIRS := $(shell find lib -type d -name 'debian' -exec dirname {} \;)
 
 # Define a target for each directory
-.PHONY: all $(DEBIAN_DIRS)
+.PHONY: all
 
-all: $(DEBIAN_DIRS)
+all: 
+	@echo "Nothing doing."
 
-$(DEBIAN_DIRS):
-	@echo "Processing directory: $@"
-	@cp -r $@ $(BUILD_DIR)/
-	@cd $(BUILD_DIR)/$@ && sudo apt build-dep . -y && dpkg-buildpackage -b -uc -us -j8
+pkg-shell:
+	@echo "Processing directory: $(SHELL_DIRS)"
+	@cp -r $(SHELL_DIRS) $(BUILD_DIR)/
+	@cd $(BUILD_DIR)/$(SHELL_DIRS) && sudo apt build-dep . -y && dpkg-buildpackage -b -uc -us -j8
 	@cd -
 
 # Clean up the build directory
