@@ -6,7 +6,7 @@
   <project path="shell/CoreComponents/CoreServer" name="lingmo-core" />
   <project path="shell/CoreComponents/Daemon" name="lingmo-daemon" />
   <project path="shell/CoreComponents/Filemanager" name="lingmo-filemanager" />
-  <project path="shell/CoreComponents/KWinPlugins" name="lingmo-kwin-plugins" />
+  <project path="shell/CoreComponents/KWinPlugins" name="lingmo-kwin-plugins" revision="deb13_fix1" />
   <project path="shell/CoreComponents/KWinRoundedWindow" name="lingmo-kwin-plugins-roundedwindow" />
   <project path="lib/SystemLibrary" name="lib_lingmo" />
   <project path="lib/SystemUI_Library" name="LingmoUI" />

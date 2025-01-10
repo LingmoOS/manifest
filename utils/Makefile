@@ -8,15 +8,22 @@ SHELL_DIRS := $(shell find shell -type d -name 'debian' -exec dirname {} \;)
 LIB_DIRS := $(shell find lib -type d -name 'debian' -exec dirname {} \;)
 
 # Define a target for each directory
-.PHONY: all
+.PHONY: all $(SHELL_DIRS) $(LIB_DIRS)
 
 all: 
 	@echo "Nothing doing."
 
-pkg-shell:
-	@echo "Processing directory: $(SHELL_DIRS)"
-	@cp -r $(SHELL_DIRS) $(BUILD_DIR)/
-	@cd $(BUILD_DIR)/$(SHELL_DIRS) && sudo apt build-dep . -y && dpkg-buildpackage -b -uc -us -j8
+pkg-shell: $(SHELL_DIRS)
+pkg-libs: $(LIB_DIRS)
+
+$(SHELL_DIRS):
+	@echo "Processing directory: $@"
+	@cd $@ && sudo apt build-dep . -y && dpkg-buildpackage -b -uc -us -j8
+	@cd -
+
+$(LIB_DIRS):
+	@echo "Processing directory: $@"
+	@cd $@ && sudo apt build-dep . -y && dpkg-buildpackage -b -uc -us -j8
 	@cd -
 
 # Clean up the build directory
