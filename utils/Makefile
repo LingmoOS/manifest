@@ -26,12 +26,13 @@ config:
 	@$(foreach dir,init,cp -r $(dir)/* $(OUTPUT)/$(dir)/;)
 
 image:
-	@$(foreach dir,images,build_img,mkdir -p $(OUTPUT)/$(dir);)
+	@$(foreach dir,images build_img,mkdir -p $(OUTPUT)/$(dir);)
 	@$(foreach dir,$(BUILD_DIR)/*,cp -rv $(dir) $(OUTPUT)/build_img/;)
 	@echo "Building System Image(ISO)"
 	@cd $(OUTPUT)/build_img/ && mv config .getopt.sh
-	@$(foreach pkgs,$(PKG_DEB),cp -v $(pkgs) $(OUTPUT)/build_img/lingmo-config/common/packages/;)
-	@bash build.sh
+	@mkdir -p $(OUTPUT)/build_img/lingmo-config/common/packages.chroot
+	@$(foreach dir,$(PKG_DEB),cp -v $(dir) $(OUTPUT)/build_img/lingmo-config/common/packages.chroot/;)
+	@cd $(OUTPUT)/build_img && bash build.sh
 	@cd -
 
 pkg-shell: $(SHELL_DIRS)
