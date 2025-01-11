@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote name="origin" fetch="https://github.com/LingmoOS" />
-  <default remote="origin" revision="main" />
+  <remote name="github" fetch="https://github.com/LingmoOS" />
+  <remote name="nebula" fetch="https://nebula.lingmo.org/lingmo-os" />
+  <default remote="github" revision="main" />
   <project path="shell/CoreComponents/Appmotor" name="lingmo-appmotor" />
   <project path="shell/CoreComponents/CoreServer" name="lingmo-core" />
   <project path="shell/CoreComponents/Daemon" name="lingmo-daemon" />
@@ -11,6 +12,7 @@
   <project path="lib/SystemLibrary" name="lib_lingmo" />
   <project path="lib/SystemUI_Library" name="LingmoUI" />
   <project path="lib/SystemLibrary_Qt" name="lingmo-qt-plugins" />
+  <project path="lib/SystemLibrary_QtXdg" name"libqtxdg" remote="nebula" />
   <project path="shell/BasicComponents/Calculator" name="lingmo-calculator" />
   <project path="shell/BasicComponents/Cursor" name="lingmo-cursor-themes" />
   <project path="shell/BasicComponents/DockPanel" name="lingmo-dock" />
