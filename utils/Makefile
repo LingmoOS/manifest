@@ -19,11 +19,11 @@ all:
 
 
 config:
-	@$(foreach dir,$(SHELL_DIRS) $(LIB_DIRS) $(EXTRA_PKG) init,mkdir -p $(OUTPUT)/$(dir);)
+	@$(foreach dir,$(SHELL_DIRS) $(LIB_DIRS) $(EXTRA_PKG),mkdir -p $(OUTPUT)/$(dir);)
 	@$(foreach dir,$(SHELL_DIRS),cp -r $(dir)/* $(OUTPUT)/$(dir)/;)
 	@$(foreach dir,$(LIB_DIRS),cp -r $(dir)/* $(OUTPUT)/$(dir)/;)
 	@$(foreach dir,$(EXTRA_PKG),cp -r $(dir)/* $(OUTPUT)/$(dir)/;)
-	@$(foreach dir,init,cp -r $(dir)/* $(OUTPUT)/$(dir)/;)
+	@$(foreach dir,init,cp -rv $(dir) $(OUTPUT)/$(EXTRA_PKG)/;)
 
 image:
 	@$(foreach dir,images build_img,mkdir -p $(OUTPUT)/$(dir);)
@@ -40,7 +40,7 @@ pkg-libs: $(LIB_DIRS)
 pkg-extra: $(EXTRA_PKG)
 pkg-base:
 	@echo "Processing directory: init"
-	@cd $(OUTPUT)/init/ && sudo apt build-dep . -y && dpkg-buildpackage -b -uc -us -j8
+	@cd $(OUTPUT)/$(EXTRA_PKG)/init/ && sudo apt build-dep . -y && dpkg-buildpackage -b -uc -us -j8
 	@cd -
 
 $(SHELL_DIRS):
