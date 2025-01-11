@@ -31,14 +31,15 @@
   <project path="shell/BasicComponents/Wallpapers" name="lingmo-wallpapers" />
   <project path="boot/splash/BootScreen" name="lingmo-plymouth-theme" />
   <project path="config/system" name="lingmo-base-common" />
+  <project path="build" name="LingmoOS" />
   <project path="tools" name="manifest">
-    <copyfile dest="Makefile" src="utils/Makefile" />
+	  <copyfile dest="Makefile" src="utils/Makefile" />
+	  <copyfile dest="build/config" src="utils/.getopt.sh" />
   </project>
   <project path="kernel" name="linux" />
   <project path="kernel/debian" name="linux-package" />
   <project path="init" name="lingmo-base-common" />
   <project path="system/installer" name="lingmo-live" />
   <project path="guide" name="lingmo-first-setup" />
-  <project path="build" name="LingmoOS" />
 </manifest>
 
