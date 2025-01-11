@@ -8,12 +8,13 @@ OUTPUT := out
 SHELL_DIRS := $(shell find shell -type d -name 'debian' -exec dirname {} \;)
 LIB_DIRS := $(shell find lib -type d -name 'debian' -exec dirname {} \;)
 EXTRA_PKG := $(shell find system -type d -name 'debian' -exec dirname {} \;)
-PKG_DEB := $(shell find $(OUTPUT)/ -name '*.deb' -exec filename {} \;)
+PKG_DEB := $(shell find out/ -name '*.deb')
 
 # Define a target for each directory
 .PHONY: all config $(SHELL_DIRS) $(LIB_DIRS) $(EXTRA_PKG) $(IMAGE_BUILD)
 
 all: 
+	@mkdir -p $(OUTPUT)
 	@echo "Nothing doing."
 
 
@@ -25,7 +26,7 @@ config:
 
 image:
 	@$(foreach dir,images,build_img,mkdir -p $(OUTPUT)/$(dir);)
-	@$(foreach dir,$(BUILD_DIR)/*,cp -rv $(OUTPUT)/build_img/;)
+	@$(foreach dir,$(BUILD_DIR)/*,cp -rv $(dir) $(OUTPUT)/build_img/;)
 	@echo "Building System Image(ISO)"
 	@cd $(OUTPUT)/build_img/ && mv config .getopt.sh
 	@$(foreach pkgs,$(PKG_DEB),cp -v $(pkgs) $(OUTPUT)/build_img/lingmo-config/common/packages/;)
