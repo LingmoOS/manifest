@@ -11,7 +11,7 @@ EXTRA_PKG := $(shell find system -type d -name 'debian' -exec dirname {} \;)
 PKG_DEB := $(shell find out/ -name '*.deb')
 
 # Define a target for each directory
-.PHONY: all config $(SHELL_DIRS) $(LIB_DIRS) $(EXTRA_PKG) $(IMAGE_BUILD)
+.PHONY: all config pkg-base $(SHELL_DIRS) $(LIB_DIRS) $(EXTRA_PKG) $(IMAGE_BUILD)
 
 all: 
 	@mkdir -p $(OUTPUT)
@@ -19,10 +19,11 @@ all:
 
 
 config:
-	@$(foreach dir,$(SHELL_DIRS) $(LIB_DIRS) $(EXTRA_PKG),mkdir -p $(OUTPUT)/$(dir);)
+	@$(foreach dir,$(SHELL_DIRS) $(LIB_DIRS) $(EXTRA_PKG) init,mkdir -p $(OUTPUT)/$(dir);)
 	@$(foreach dir,$(SHELL_DIRS),cp -r $(dir)/* $(OUTPUT)/$(dir)/;)
 	@$(foreach dir,$(LIB_DIRS),cp -r $(dir)/* $(OUTPUT)/$(dir)/;)
 	@$(foreach dir,$(EXTRA_PKG),cp -r $(dir)/* $(OUTPUT)/$(dir)/;)
+	@$(foreach dir,init,cp -r $(dir)/* $(OUTPUT)/$(dir)/;)
 
 image:
 	@$(foreach dir,images,build_img,mkdir -p $(OUTPUT)/$(dir);)
@@ -36,6 +37,10 @@ image:
 pkg-shell: $(SHELL_DIRS)
 pkg-libs: $(LIB_DIRS)
 pkg-extra: $(EXTRA_PKG)
+pkg-base:
+	@echo "Processing directory: init"
+	@cd $(OUTPUT)/init/ && sudo apt build-dep . -y && dpkg-buildpackage -b -uc -us -j8
+	@cd -
 
 $(SHELL_DIRS):
 	@echo "Processing directory: $@"
