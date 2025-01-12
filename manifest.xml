@@ -22,7 +22,7 @@
   <project path="shell/BasicComponents/Launcher" name="lingmo-launcher" />
   <project path="shell/BasicComponents/OCRServer" name="lingmo-ocr" />
   <project path="shell/BasicComponents/LoginManagerStyle" name="lingmo-sddm-theme" />
-  <project path="shell/BasicComponents/Settings" name="lingmo-settings" />
+  <project path="shell/BasicComponents/Settings" name="lingmo-settings" revision="helium" />
   <project path="shell/BasicComponents/StatusBar" name="lingmo-statusbar" />
   <project path="shell/BasicComponents/ScreenShots" name="lingmo-screenshots" />
   <project path="shell/BasicComponents/ScreenLocker" name="lingmo-screenlocker" />
