@@ -8,7 +8,7 @@
   <project path="shell/CoreComponents/Daemon" name="lingmo-daemon" />
   <project path="shell/CoreComponents/Filemanager" name="lingmo-filemanager" revision="dev"/>
   <project path="shell/CoreComponents/KWinPlugins" name="lingmo-kwin-plugins" />
-  <project path="shell/CoreComponents/KWinRoundedWindow" name="lingmo-kwin-plugins-roundedwindow" revision="refs/tags/1.1.0" />
+  <project path="shell/CoreComponents/KWinRoundedWindow" name="lingmo-kwin-plugins-roundedwindow" revision="refs/tags/1.0.2" />
   <project path="lib/SystemLibrary" name="lib_lingmo" revision="qt5" />
   <project path="lib/SystemUI_Library" name="LingmoUI" revision="refs/tags/2.3.0" />
   <project path="lib/SystemLibrary_Qt" name="lingmo-qt-plugins" />
