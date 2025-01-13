@@ -4,7 +4,7 @@
   <remote name="nebula" fetch="https://nebula.lingmo.org/lingmo-os" />
   <default remote="github" revision="main" />
   <project path="shell/CoreComponents/Appmotor" name="lingmo-appmotor" />
-  <project path="shell/CoreComponents/CoreServer" name="lingmo-core" revision="refs/tags/2.0.3" />
+  <project path="shell/CoreComponents/CoreServer" name="lingmo-core" revision="refs/tags/2.0.2" />
   <project path="shell/CoreComponents/Daemon" name="lingmo-daemon" />
   <project path="shell/CoreComponents/Filemanager" name="lingmo-filemanager" revision="dev"/>
   <project path="shell/CoreComponents/KWinPlugins" name="lingmo-kwin-plugins" />
