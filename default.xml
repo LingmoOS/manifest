@@ -4,7 +4,7 @@
   <remote name="nebula" fetch="https://nebula.lingmo.org/lingmo-os" />
   <default remote="github" revision="main" />
   <project path="shell/CoreComponents/Appmotor" name="lingmo-appmotor" />
-  <project path="shell/CoreComponents/CoreServer" name="lingmo-core" revision="refs/tags/2.0.2" />
+  <project path="shell/CoreComponents/CoreServer" name="lingmo-core" revision="helium" />
   <project path="shell/CoreComponents/Daemon" name="lingmo-daemon" />
   <project path="shell/CoreComponents/Filemanager" name="lingmo-filemanager" revision="dev"/>
   <project path="shell/CoreComponents/KWinPlugins" name="lingmo-kwin-plugins" />
@@ -23,7 +23,7 @@
   <project path="shell/BasicComponents/OCRServer" name="lingmo-ocr" />
   <project path="shell/BasicComponents/LoginManagerStyle" name="lingmo-sddm-theme" revision="refs/tags/2.7.0" />
   <project path="shell/BasicComponents/Settings" name="lingmo-settings" revision="helium" />
-  <project path="shell/BasicComponents/StatusBar" name="lingmo-statusbar" revision="refs/tags/2.0.1" />
+  <project path="shell/BasicComponents/StatusBar" name="lingmo-statusbar" revision="helium" />
   <project path="shell/BasicComponents/ScreenShots" name="lingmo-screenshots" />
   <project path="shell/BasicComponents/ScreenLocker" name="lingmo-screenlocker" />
   <project path="shell/BasicComponents/Terminal" name="lingmo-terminal" />
@@ -33,14 +33,15 @@
   <project path="shell/BasicComponents/Wallpapers" name="lingmo-wallpapers" />
   <project path="boot/splash/BootScreen" name="lingmo-plymouth-theme" />
   <project path="build" name="LingmoOS" />
+    <copyfile dest="lingmo-config/installer" src="system/installer" />
+    <copyfile dest="lingmo-config/lingmo-base-common" src="init" />
   <project path="tools" name="manifest">
 	  <copyfile dest="Makefile" src="utils/Makefile" />
 	  <copyfile dest="build/config" src="utils/.getopt.sh" />
   </project>
   <project path="kernel" name="linux" />
   <project path="kernel/debian" name="linux-package" />
-  <project path="init" name="lingmo-base-common" />
-  <project path="system/installer" name="lingmo-live" revision="helium" />
+  <!-- <project path="init" name="lingmo-base-common" /> -->
   <project path="guide" name="lingmo-first-setup" />
 </manifest>
 
