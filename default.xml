@@ -34,9 +34,9 @@
   <project path="shell/bc/VideoPlayer" name="lingmo-videoplayer" />
   <project path="shell/bc/Wallpapers" name="lingmo-wallpapers" />
   <project path="boot/splash/BootScreen" name="lingmo-plymouth-theme" />
-  <project path="build" name="LingmoOS" />
-    <copyfile dest="lingmo-config/installer" src="system/installer" />
-    <copyfile dest="lingmo-config/lingmo-base-common" src="init" />
+  <project path="build" name="LingmoOS" revision="common" />
+    <copyfile dest="system/installer" src="utils/lingmo-config/installer" />
+    <copyfile dest="init" src="utils/lingmo-config/lingmo-base-common" />
   <project path="tools" name="manifest">
 	  <copyfile dest="Makefile" src="utils/Makefile" />
 	  <copyfile dest="build/config" src="utils/.getopt.sh" />
