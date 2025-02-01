@@ -27,7 +27,7 @@
   <project path="shell/bc/StatusBar" name="lingmo-statusbar" revision="helium" />
   <project path="shell/bc/ScreenShots" name="lingmo-screenshots" />
   <project path="shell/bc/ScreenLocker" name="lingmo-screenlocker" />
-  <project path="shell/bc/SystemMonitor" name="lingmo-system-monitor" />
+  <project path="shell/bc/SystemMonitor" name="lingmo-system-monitor-new" />
   <project path="shell/bc/Terminal" name="lingmo-terminal" />
   <project path="shell/bc/Texteditor" name="lingmo-texteditor" />
   <project path="shell/bc/UpdateTool" name="lingmo-updator" />
@@ -35,11 +35,11 @@
   <project path="shell/bc/Wallpapers" name="lingmo-wallpapers" />
   <project path="boot/splash/BootScreen" name="lingmo-plymouth-theme" />
   <project path="build" name="LingmoOS" revision="common" />
-    <copyfile dest="system/installer" src="utils/lingmo-config/installer" />
-    <copyfile dest="init" src="utils/lingmo-config/lingmo-base-common" />
+    <copyfile dest="utils/lingmo-config/installer" src="system/installer" />
+    <copyfile dest="utils/lingmo-config/lingmo-base-common" src="init" />
   <project path="tools" name="manifest">
-	  <copyfile dest="Makefile" src="utils/Makefile" />
-	  <copyfile dest="build/config" src="utils/.getopt.sh" />
+	  <copyfile dest="utils/Makefile" src="Makefile" />
+	  <copyfile dest="utils/.getopt.sh" src="build/config" />
   </project>
   <project path="kernel" name="linux" />
   <project path="kernel/debian" name="linux-package" />
