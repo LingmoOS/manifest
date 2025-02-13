@@ -2,9 +2,11 @@
 <manifest>
   <remote name="github" fetch="https://github.com/LingmoOS" />
   <remote name="nebula" fetch="https://nebula.lingmo.org/lingmo-os" />
+  <remote name="founder" fetch="https://github.com/lingmo-dream" />
   <default remote="github" revision="main" />
   <project path="shell/cc/Appmotor" name="lingmo-appmotor" />
   <project path="core" name="lingmo-core" revision="helium" />
+  <project path="core32" name="lingmo-workspace" remote="founder" />
   <project path="shell/cc/Daemon" name="lingmo-daemon" />
   <project path="fm" name="lingmo-filemanager" revision="dev"/>
   <project path="windows/plugins/" name="lingmo-kwin-plugins" />
@@ -23,6 +25,7 @@
   <project path="shell/bc/Launcher" name="lingmo-launcher" />
   <project path="shell/bc/OCRServer" name="lingmo-ocr" />
   <project path="shell/bc/LoginManagerStyle" name="lingmo-sddm-theme" revision="refs/tags/2.7.0" />
+  <project path="shell/bc/Notepad" name="lingmo-notepad" remote="founder" />
   <project path="shell/bc/Settings" name="lingmo-settings" revision="helium" />
   <project path="shell/bc/StatusBar" name="lingmo-statusbar" revision="helium" />
   <project path="shell/bc/ScreenShots" name="lingmo-screenshots" />
