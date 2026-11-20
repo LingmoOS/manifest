@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <remote
+        name="google-upstream"
+        fetch="https://skia.googlesource.com/"
+    />
+
+    <default sync-j="8"/>
+
+    <project
+        name="skia"
+        path="lib/graphics/skia"
+        remote="google-upstream"
+        revision="chrome/m156"
+    />
+
+</manifest>

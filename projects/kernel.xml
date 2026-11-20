@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <remote
+        name="github"
+        fetch="https://github.com/LingmoOS/"
+    />
+
+    <default
+        remote="github"
+        revision="main"
+        sync-j="8"
+    />
+
+    <!-- Mainline Linux Kernel -->
+    <project name="linux" path="kernel/linux" />
+
+</manifest>

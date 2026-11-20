@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <remote
+        name="github"
+        fetch="https://github.com/LingmoOS/"
+    />
+
+    <default
+        remote="github"
+        revision="main"
+        sync-j="8"
+    />
+
+    <!-- Core -->
+    <project name="lingmo-core" path="core" />
+
+    <!-- Desktop Framework -->
+    <project name="lingmo-framework" path="framework" />
+
+    <!-- File Manager -->
+    <project name="lingmo-filemanager" path="fm" />
+
+    <!-- Desktop Shell -->
+    <project name="aurora" path="shell" />
+    <project name="lingmo-cursor-themes" path="shellExtra/cursor-themes" />
+    <project name="lingmo-systemicons" path="shellExtra/icons" />
+    <project name="lingmo-wallpapers" path="shellExtra/wallpapers" />
+
+    <!-- SDK -->
+    <project name="lingmo-sdk" path="sdk" />
+
+    <!-- Meta Packages -->
+    <project name="lingmo-meta" path="meta" />
+
+    <!-- Libraries -->
+    <project name="cadence" path="lib/cadence" />
+    <project name="lingmo_qt_plugins" path="lib/qt_plugins" />
+
+    <!-- Boot -->
+    <project name="lingmo-grub-config" path="boot/grub-config" />
+    <project name="lingmo-plymouth-theme" path="boot/plymouth-theme" />
+
+    <!-- Services -->
+    <project name="lingmo-dm" path="services/dm" />
+
+    <!-- Applications -->
+    <!-- <project name="lingmo_appstore" path="apps/lingmo_appstore" /> -->
+    <project name="lingmo-archive-manager" path="apps/lingmo_archive_manager" />
+    <project name="lingmo-calculator" path="apps/lingmo_calculator" />
+    <project name="lingmo-clock" path="apps/lingmo-clock" />
+    <project name="lingmo-photos" path="apps/lingmo_photos" />
+    <project name="lingmo-search" path="apps/lingmo-search" />
+    <project name="lingmo_settings" path="apps/lingmo_settings" />
+    <project name="lingmo_system_monitor" path="apps/lingmo_system_monitor" />
+    <project name="lingmo-terminal" path="apps/lingmo_terminal" />
+    <project name="lingmo_text_editor" path="apps/lingmo_text_editor" />
+    <project name="lingmo_video_player" path="apps/lingmo_video_player" />
+
+    <!-- XDG -->
+    <project name="xdg-desktop-portal-lingmo"
+             path="xdg/xdg_desktop_portal_lingmo" />
+    
+
+</manifest>
