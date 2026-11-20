@@ -84,7 +84,7 @@
     <project name="live-tools" path="live/tools"/>
 
     <!-- XDG -->
-    <project name="xdg-desktop-portal-lingmo"
+    <project name="xdg_desktop_portal_lingmo"
              path="xdg/xdg_desktop_portal_lingmo" />
     
     <!-- Utils -->
